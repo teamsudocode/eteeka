@@ -33,6 +33,7 @@ const ChildSchema = new Schema({
     },
     fullName: { type: String, required: true, trim: true },
     dateOfBirth: { type: Date, required: true },
+    gender: { type: String, required: true, enum: ['male', 'female'] },
     vaccines: [VaccineSchema]
 })
 

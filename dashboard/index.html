@@ -2,14 +2,14 @@
     <head>
         <title>E-Teeka</title>
         <meta charset="utf-8" /> 
+        <!-- <script src="sdk.js"></script> -->
 
         <style>
-            /* .table-row {
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: space-around;
-            } */
+            table, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 5px 20px;
+            }
         </style>
     </head>
 
@@ -47,16 +47,17 @@
                 let innerHTML = ''
                 for (let v of vaccines) {
                     console.log(v)
-
-                    innerHTML += `<tr data-v-id="${v._id}">
-                                    <td>${v.name}</td>
-                                    <td>${v.description}</td>
-                                    <td>${v.givenAt}</td>
-                                    <td>
-                                        <button class='v-toggle-btn'> Toggle </button>
-                                    </td>
-                                  </tr>
-                                `
+                    innerHTML += '<tr data-v-id="' + v._id + '">' + 
+                                    '<td>' + v.name         + '</td>' +
+                                    '<td>' + v.description  + '</td>' +
+                                    '<td>' + v.scheduledAt  + '</td>' +
+                                    '<td>' + v.givenAt      + '</td>' +
+                                    '<td>' + 
+                                        '<button class="v-toggle-btn">' +
+                                            'Toggle' + 
+                                        '</button>' + 
+                                    '</td>' +
+                                    '</tr>'
                 }
                 document.getElementById(target).innerHTML = innerHTML
             }
@@ -64,9 +65,7 @@
             /* List vaccination info in all categories */
             async function displayAllVaccinationInfo(childId) {
                 try {
-                    let response = await fetch(`/getChildInfo?childId=${childId}`)
-                    let responseJson = await response.json()
-
+                    let responseJson = await getChildInfo(childId)
                     console.log(responseJson)
                     
                     displayVaccinationInfo(responseJson.status.completed, 'completed-vaccines')
@@ -83,40 +82,21 @@
             function attachToggleEvents() {
                 let allButtons = document.getElementsByClassName('v-toggle-btn')
                 for (let each of allButtons) {
-                    each.onclick = function(event) {
+                    each.onclick = async function(event) {
                         // parent = td -> parent = tr
                         let v_id = event.target.parentElement.parentElement.getAttribute('data-v-id')
-                        let status = toggleVaccinationStatus(v_id)
-                        console.log(status)
+                        let responseJson = await markVaccination(v_id, username)
+                        if (responseJson.ok) {
+                            let tr = document.querySelector(`[data-v-id="${v_id}]`)
+                            let tds = tr.getElementsByTagName('td')
+                            tds[4].innerText = (new Date()).toString()
+                        } else {
+                            console.log('error marking vaccination for', v_id, 'by', username)
+                        }
                     }
                 }
             }
 
-            /* Make API call to toggle vaccination status for a particular ID */
-            async function toggleVaccinationStatus(v_id) {
-                console.log(v_id)
-                try {
-                    let response = await fetch(
-                        // '/markVaccine?' + 'vaccineId=' + v_id + '&givenBy=' + username
-                        `/markVaccine?vaccineId=${v_id}&givenBy=${username}`
-                    )
-                    return response.status
-                } catch (e) {
-                    console.log('some error occured')
-                }
-            }
-
-            /* Make API call to get children on a bhamashah card */
-            async function listChildren(parentBhamashahId) {
-                try {
-                    // let response = await fetch('/listChildren?parentBhamashahId=' + parentBhamashahId)
-                    let response = await fetch(`/listChildren?parentBhamashahId=${parentBhamashahId}`)
-                    let responseJson = await response.json()
-                    return responseJson
-                } catch (e) {
-                    console.log('error> listChlidren :', e)
-                }
-            }
 
             /* Event handler to list children on a bhamashah card */
             function listChildrenHandler() {
@@ -131,7 +111,7 @@
                         // html += '<li>' + child.fullName + '<button onclick="displayAllVaccinationInfo(\"' + child._id + '\")">Get info</button>' + '</li>'
                         html += `<li>
                                     ${child.fullName} 
-                                    <button onclick='displayAllVaccinationInfo("${child._id}")'>
+                                    <button onclick="displayAllVaccinationInfo('${child._id}')">
                                         Get Info
                                     </button>
                                 </li>`
@@ -141,6 +121,53 @@
             }
 
             listChildrenHandler()
+
+
+            /* sdk.js */
+
+            async function listChildren(parentBhamashahId) {
+                try {
+                    let response = await fetch(`/listChildren?parentBhamashahId=${parentBhamashahId}`)
+                    let responseJson = await response.json()
+                    return responseJson
+                } catch (e) {
+                    console.error('listChildren > some error occured')
+                    console.error(e)
+                }
+            }
+
+            async function getChildInfo(childId) {
+                try {
+                    let response = await fetch(`/getChildInfo?childId=${childId}`)
+                    let responseJson = await response.json()
+                    return responseJson
+                } catch (e) {
+                    console.error('getChildInfo > some error occured')
+                    console.error(e)
+                }
+            }
+
+            async function markVaccination(vaccineId, givenBy) {
+                try {
+                    let response = await fetch(`/markVaccine?vaccineId=${vaccineId}&givenBy=${givenBy}`)
+                    let responseJson = await response.json()
+                    return responseJson
+                } catch (e) {
+                    console.error('markVaccination > some error occured')
+                    console.error(e)
+                }
+            }
+
+            async function unmarkVaccination(vaccineId, givenBy) {
+                try {
+                    let response = await fetch(`/unmarkVaccine?vaccineId=${vaccineId}&givenBy=${givenBy}`)
+                    let responseJson = await response.json()
+                    return responseJson
+                } catch (e) {
+                    console.error('unmarkVaccination > some error occured')
+                    console.error(e)
+                }
+            }
             
         </script>
         
