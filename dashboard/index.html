@@ -1,195 +1,186 @@
 <html>
-    <head>
-        <title>E-Teeka</title>
-        <meta charset="utf-8" /> 
-        <!-- <script src="sdk.js"></script> -->
 
-        <style>
-            table, td, th {
-                border: 1px solid black;
-                border-collapse: collapse;
-                padding: 5px 20px;
-            }
-            th {
-                font-weight: bold;
-            }
-            body {
-                margin: 10px 100px;
-            }
-        </style>
-    </head>
+<head>
+    <title>E-Teeka</title>
+    <meta charset="utf-8" />
+    <!-- <script src="sdk.js"></script> -->
 
-    <body>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    
+</head>
 
-        <div id="list-children-container">
-            Parent Bhamashah ID: <input type="text" id="parentBhamashahInput">
+<body>
+    <div class="nav">
+        <form id="list-children-container">
+            <input type="number" id="parentBhamashahInput" placeholder="Parent Bhamashah ID">
             <button id="listChildrenBtn">List children</button>
-            <ul id="list-children">
-            </ul>
-        </div>
-        
-        <div id="child-vaccine-info">
-            <h4>Completed vaccines</h4>
-            <table id="completed-vaccines"></table>
-            <hr>
+        </form>
+        <h1>E-Teeka</h1>
+    </div>
+    <ul id="list-children" class="children-list">
+    </ul>
+    <div id="child-vaccine-info">
+        <h4>Completed vaccines</h4>
+        <table id="completed-vaccines"></table>
+        <hr>
 
-            <h4>Due vaccines</h4>
-            <table id="due-vaccines"></table>
-            <hr>
+        <h4>Due vaccines</h4>
+        <table id="due-vaccines"></table>
+        <hr>
 
-            <h4>Future vaccines</h4>
-            <table id="future-vaccines"></table>
-            <hr>
-        </div>
+        <h4>Future vaccines</h4>
+        <table id="future-vaccines"></table>
+        <hr>
+    </div>
 
-        <script>
-            // var domainName = 'http://eteeka.herokuapp.com/'
-            var domainName = ''
-            var username = 'sharma'
-            
+    <script>
+        // var domainName = 'http://eteeka.herokuapp.com/'
+        var domainName = ''
+        var username = 'sharma'
 
-            /* List vaccination info of a particular child, in a specific category */
-            function displayVaccinationInfo(vaccines, target, mark) {
-                let innerHTML = `<tr>
+
+        /* List vaccination info of a particular child, in a specific category */
+        function displayVaccinationInfo(vaccines, target, mark) {
+            let innerHTML = `<tr>
                                     <th>Vaccine Name</th>
                                     <th>Description</th>
                                     <th>Scheduled At</th>
                                     <th>Given at</th>
                                     <th>Mark/Unmark</th>
                                 <tr>`
-                let buttonText = (mark == true) ? 'Mark' : 'Unmark'
-                for (let v of vaccines) {
-                    console.log(v)
-                    innerHTML += '<tr data-v-id="' + v._id + '">' + 
-                                    '<td>' + v.name         + '</td>' +
-                                    '<td>' + v.description  + '</td>' +
-                                    '<td>' + v.scheduledAt  + '</td>' +
-                                    '<td>' + v.givenAt      + '</td>' +
-                                    '<td>' + 
-                                        '<button class="v-toggle-btn" data-mark="' + mark + '">' +
-                                            buttonText + 
-                                        '</button>' + 
-                                    '</td>' +
-                                    '</tr>'
-                }
-                document.getElementById(target).innerHTML = innerHTML
+            let buttonText = (mark == true) ? 'Mark' : 'Unmark'
+            for (let v of vaccines) {
+                console.log(v)
+                innerHTML += '<tr data-v-id="' + v._id + '">' +
+                    '<td>' + v.name + '</td>' +
+                    '<td>' + v.description + '</td>' +
+                    '<td>' + v.scheduledAt + '</td>' +
+                    '<td>' + v.givenAt + '</td>' +
+                    '<td>' +
+                    '<button class="v-toggle-btn" data-mark="' + mark + '">' +
+                    buttonText +
+                    '</button>' +
+                    '</td>' +
+                    '</tr>'
             }
-            
-            /* List vaccination info in all categories */
-            async function displayAllVaccinationInfo(childId) {
-                try {
-                    let responseJson = await getChildInfo(childId)
-                    console.log(responseJson)
-                    
-                    displayVaccinationInfo(responseJson.status.completed, 'completed-vaccines', false)
-                    displayVaccinationInfo(responseJson.status.due, 'due-vaccines', true)
-                    displayVaccinationInfo(responseJson.status.future, 'future-vaccines', true)
-                    
-                    attachToggleEvents()
-                } catch (e) {
-                    console.log('error> displayAllVaccinationInfo :', e)
-                }
+            document.getElementById(target).innerHTML = innerHTML
+        }
+
+        /* List vaccination info in all categories */
+        async function displayAllVaccinationInfo(childId) {
+            try {
+                let responseJson = await getChildInfo(childId)
+                console.log(responseJson)
+
+                displayVaccinationInfo(responseJson.status.completed, 'completed-vaccines', false)
+                displayVaccinationInfo(responseJson.status.due, 'due-vaccines', true)
+                displayVaccinationInfo(responseJson.status.future, 'future-vaccines', true)
+
+                attachToggleEvents()
+            } catch (e) {
+                console.log('error> displayAllVaccinationInfo :', e)
             }
-            
-            /* Attach event handlers to all toggle events */
-            function attachToggleEvents() {
-                let allButtons = document.getElementsByClassName('v-toggle-btn')
-                for (let each of allButtons) {
-                    each.onclick = async function(event) {
-                        // parent = td -> parent = tr
-                        let v_id = event.target.parentElement.parentElement.getAttribute('data-v-id')
-                        let mark = event.target.getAttribute('data-mark') == 'true'
-                        let responseJson
-                        
-                        if (mark)
-                            responseJson = await markVaccination(v_id, username)
-                        else
-                            responseJson = await unmarkVaccination(v_id, username)
-                        
-                        if (responseJson.ok) {
-                            let tr = document.querySelector(`[data-v-id="${v_id}]`)
-                            let tds = tr.getElementsByTagName('td')
-                            tds[4].innerText = (new Date()).toString()
-                        } else {
-                            console.log('error marking vaccination for', v_id, 'by', username)
-                        }
+        }
+
+        /* Attach event handlers to all toggle events */
+        function attachToggleEvents() {
+            let allButtons = document.getElementsByClassName('v-toggle-btn')
+            for (let each of allButtons) {
+                each.onclick = async function(event) {
+                    // parent = td -> parent = tr
+                    let v_id = event.target.parentElement.parentElement.getAttribute('data-v-id')
+                    let mark = event.target.getAttribute('data-mark') == 'true'
+                    let responseJson
+
+                    if (mark)
+                        responseJson = await markVaccination(v_id, username)
+                    else
+                        responseJson = await unmarkVaccination(v_id, username)
+
+                    if (responseJson.ok) {
+                        let tr = document.querySelector(`[data-v-id="${v_id}]`)
+                        let tds = tr.getElementsByTagName('td')
+                        tds[4].innerText = (new Date()).toString()
+                    } else {
+                        console.log('error marking vaccination for', v_id, 'by', username)
                     }
                 }
             }
+        }
 
 
-            /* Event handler to list children on a bhamashah card */
-            function listChildrenHandler() {
-                console.log('attaching listchildren listener')
-                var parentBhamashahId = document.getElementById('parentBhamashahInput').value
-                document.getElementById('listChildrenBtn').onclick = async function(e) {
-                    console.log('listing for', parentBhamashahId)
-                    let children = await listChildren(parentBhamashahId)
+        /* Event handler to list children on a bhamashah card */
+        function listChildrenHandler() {
+            console.log('attaching listchildren listener')
+            var parentBhamashahId = document.getElementById('parentBhamashahInput').value
+            document.getElementById('listChildrenBtn').onclick = async function(e) {
+                console.log('listing for', parentBhamashahId)
+                let children = await listChildren(parentBhamashahId)
 
-                    let html = ''
-                    for (let child of children) {
-                        // html += '<li>' + child.fullName + '<button onclick="displayAllVaccinationInfo(\"' + child._id + '\")">Get info</button>' + '</li>'
-                        html += `<li>
+                let html = ''
+                for (let child of children) {
+                    // html += '<li>' + child.fullName + '<button onclick="displayAllVaccinationInfo(\"' + child._id + '\")">Get info</button>' + '</li>'
+                    html += `<li>
                                     ${child.fullName} 
                                     <button onclick="displayAllVaccinationInfo('${child._id}')">
                                         Get Info
                                     </button>
                                 </li>`
-                    }
-                    document.getElementById('list-children').innerHTML = html
                 }
+                document.getElementById('list-children').innerHTML = html
             }
+        }
 
-            
-            
-            /* sdk.js */
-            
-            async function listChildren(parentBhamashahId) {
-                try {
-                    let response = await fetch(`/listChildren?parentBhamashahId=${parentBhamashahId}`)
-                    let responseJson = await response.json()
-                    return responseJson
-                } catch (e) {
-                    console.error('listChildren > some error occured')
-                    console.error(e)
-                }
-            }
 
-            async function getChildInfo(childId) {
-                try {
-                    let response = await fetch(`/getChildInfo?childId=${childId}`)
-                    let responseJson = await response.json()
-                    return responseJson
-                } catch (e) {
-                    console.error('getChildInfo > some error occured')
-                    console.error(e)
-                }
-            }
-            
-            async function markVaccination(vaccineId, givenBy) {
-                try {
-                    let response = await fetch(`/markVaccine?vaccineId=${vaccineId}&givenBy=${givenBy}`)
-                    let responseJson = await response.json()
-                    return responseJson
-                } catch (e) {
-                    console.error('markVaccination > some error occured')
-                    console.error(e)
-                }
-            }
-            
-            async function unmarkVaccination(vaccineId, givenBy) {
-                try {
-                    let response = await fetch(`/unmarkVaccine?vaccineId=${vaccineId}&givenBy=${givenBy}`)
-                    let responseJson = await response.json()
-                    return responseJson
-                } catch (e) {
-                    console.error('unmarkVaccination > some error occured')
-                    console.error(e)
-                }
-            }
 
-            window.onload = () => {
-                listChildrenHandler()
+        /* sdk.js */
+
+        async function listChildren(parentBhamashahId) {
+            try {
+                let response = await fetch(`/listChildren?parentBhamashahId=${parentBhamashahId}`)
+                let responseJson = await response.json()
+                return responseJson
+            } catch (e) {
+                console.error('listChildren > some error occured')
+                console.error(e)
+            }
+        }
+
+        async function getChildInfo(childId) {
+            try {
+                let response = await fetch(`/getChildInfo?childId=${childId}`)
+                let responseJson = await response.json()
+                return responseJson
+            } catch (e) {
+                console.error('getChildInfo > some error occured')
+                console.error(e)
+            }
+        }
+
+        async function markVaccination(vaccineId, givenBy) {
+            try {
+                let response = await fetch(`/markVaccine?vaccineId=${vaccineId}&givenBy=${givenBy}`)
+                let responseJson = await response.json()
+                return responseJson
+            } catch (e) {
+                console.error('markVaccination > some error occured')
+                console.error(e)
+            }
+        }
+
+        async function unmarkVaccination(vaccineId, givenBy) {
+            try {
+                let response = await fetch(`/unmarkVaccine?vaccineId=${vaccineId}&givenBy=${givenBy}`)
+                let responseJson = await response.json()
+                return responseJson
+            } catch (e) {
+                console.error('unmarkVaccination > some error occured')
+                console.error(e)
+            }
+        }
+
+        window.onload = () => {
+            listChildrenHandler()
 
                 var search = location.search.substring(1);
                 if (search.length > 1) {
@@ -204,8 +195,10 @@
                     }
                 }
             }
-            
-            </script>
-        
-    </body>
-    </html>
+        }
+
+    </script>
+
+</body>
+
+</html>
