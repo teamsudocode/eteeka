@@ -34,8 +34,8 @@
     </div>
 
     <script>
-        // var domainName = 'http://eteeka.herokuapp.com/'
-        var domainName = ''
+        var domainName = 'http://eteeka.herokuapp.com'
+        //var domainName = ''
         var username = 'sharma'
 
 
@@ -97,7 +97,9 @@
                     else
                         responseJson = await unmarkVaccination(v_id, username)
 
+                    window.location.reload()
                     if (responseJson.ok) {
+                        window.location.reload()
                         let tr = document.querySelector(`[data-v-id="${v_id}]`)
                         let tds = tr.getElementsByTagName('td')
                         tds[4].innerText = (new Date()).toString()
