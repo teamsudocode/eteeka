@@ -370,4 +370,106 @@ table {
     color: #979797;
     text-decoration: none; }
 
+/* line 381, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+.home .nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1.2em 0.5em;
+  background-color: #65C101; }
+  /* line 387, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  .home .nav img {
+    margin-left: 1em; }
+  /* line 390, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  .home .nav h1 {
+    font-family: Roboto;
+    font-size: 1.5em;
+    color: #FFFFFF; }
+
+/* line 396, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+.home .welcome {
+  margin: 12px 1em 12px 1em !important; }
+  /* line 398, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  .home .welcome h2 {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 18px;
+    color: #4A4A4A;
+    letter-spacing: 0; }
+  /* line 405, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  .home .welcome h3 {
+    margin-top: 8px;
+    font-family: Roboto;
+    font-size: 14px;
+    line-height: 22px;
+    color: #4A4A4A;
+    letter-spacing: 0; }
+    /* line 412, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+    .home .welcome h3 span {
+      color: #F79A00; }
+
+/* line 417, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+.home .card {
+  padding: 20px;
+  margin: 0 1em;
+  background: #FFFFFF;
+  box-shadow: 0 2px 1px 0 rgba(215, 215, 215, 0.5);
+  border-radius: 2px; }
+
+/* line 424, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+.home .child {
+  margin-bottom: 24px; }
+  /* line 426, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  .home .child .child-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
+    /* line 430, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+    .home .child .child-info .child-name {
+      font-family: Roboto;
+      font-size: 16px;
+      color: #4A4A4A;
+      letter-spacing: 0; }
+    /* line 437, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+    .home .child .child-info .child-gender span {
+      margin-left: 4px;
+      font-family: Roboto;
+      font-weight: 300;
+      font-size: 14px;
+      color: #A7A7A7;
+      letter-spacing: 0; }
+  /* line 447, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  .home .child hr {
+    height: 0;
+    margin: 12px 0;
+    border: 1px solid #F3F3F3; }
+  /* line 452, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  .home .child .med-info {
+    margin-bottom: 1.2em; }
+    /* line 454, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+    .home .child .med-info .med-name {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between; }
+      /* line 458, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+      .home .child .med-info .med-name .med {
+        font-family: Roboto;
+        font-weight: 500;
+        font-size: 14px;
+        color: #F79A00;
+        letter-spacing: 0; }
+      /* line 465, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+      .home .child .med-info .med-name .date {
+        font-family: Roboto;
+        font-size: 14px;
+        color: #65C101;
+        letter-spacing: 0; }
+    /* line 472, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+    .home .child .med-info .med-about {
+      margin-top: 8px;
+      font-family: Roboto;
+      font-size: 12px;
+      color: #5E5E5E;
+      letter-spacing: 0; }
+
 /*# sourceMappingURL=index.css.map */
