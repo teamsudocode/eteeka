@@ -1,0 +1,102 @@
+<html >
+    <head>
+        <title>E-Teeka</title>
+        <meta charset="utf-8" /> 
+
+        <style>
+            /* .table-row {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            } */
+        </style>
+    </head>
+
+    <body>
+
+        <div id="list-children">
+        </div>
+        
+        <div id="child-vaccine-info">
+            <table id="completed-vaccines"></table>
+            <table id="due-vaccines"></table>
+            <table id="future-vaccines"></table>
+        </div>
+
+        <script>
+            
+            function displayScheduledVaccines(vaccines, target) {
+                let innerHTML = ''
+                for (let v of vaccines) {
+                    console.log(v)
+                    innerHTML += '<tr>' + 
+                                    '<td>' + v.name         + '</td>' +
+                                    '<td>' + v.description  + '</td>' +
+                                    '<td>' + v.scheduledAt  + '</td>' +
+                                    '<td>' + v.givenAt      + '</td>' +
+                                    '<td>' + 
+                                        '<button class="v-toggle-btn" data-v-id="'+ v._id + '">' +
+                                            'Toggle' + 
+                                        '</button>' + 
+                                    '</td>' +
+                                '</tr>'
+                }
+                document.getElementById(target).innerHTML = innerHTML
+            }
+
+            function attachToggleEvents() {
+                let allButtons = document.getElementsByClassName('v-toggle-btn')
+                for (let each of allButtons) {
+                    each.onclick = function(event) {
+                        let v_id = event.target.getAttribute('data-v-id')
+                        console.log(v_id)
+                    }
+                }
+            }
+
+            function toggleVaccinationStatus(vid) {
+                console.log(vid)
+            }
+
+            function listChildren(parentBhamashahId) {
+                fetch('http://localhost:3000/listChildren?parentBhamashahId=' + parentBhamashahId)
+                .then((response) => response.json())
+                .then((children) => {
+                    console.log(children)
+                })
+            }
+
+            let vaccines = [
+                {
+                    "givenAt": null,
+                    "givenBy": null,
+                    "_id": "5ab0de375e9b43000489a906",
+                    "name": "BCG",
+                    "description": "Tuberculosis vaccine",
+                    "scheduledAt": "2018-03-20T10:11:03.460Z"
+                },
+                {
+                    "givenAt": null,
+                    "givenBy": null,
+                    "_id": "5ab0de375e9b43000489a905",
+                    "name": "OPV",
+                    "description": "Oral Polio Vaccine",
+                    "scheduledAt": "2018-03-20T10:11:03.460Z"
+                },
+                {
+                    "givenAt": null,
+                    "givenBy": null,
+                    "_id": "5ab0de375e9b43000489a904",
+                    "name": "Heptatitis B",
+                    "description": "Hepatitis B vaccine",
+                    "scheduledAt": "2018-03-20T10:11:03.460Z"
+                }
+            ]
+
+            displayScheduledVaccines(vaccines, 'due-vaccines')
+            attachToggleEvents()
+        </script>
+        
+    </body>
+</html>
