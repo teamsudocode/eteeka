@@ -1,5 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const cors = require('cors')
 const readFileSync = require('fs').readFileSync
 const Schema = mongoose.Schema;
 
@@ -11,6 +12,7 @@ var config = {
 }
 
 var app = express()
+app.use(cors())
 
 // models
 
@@ -115,7 +117,7 @@ app.get('/listChildren', (req, res) => {
 
     Child.find(
         { parentBhamashahId: parentBhamashahId },
-        { _id: true })
+        { vaccines: false })
     .then((child) => {
         res.json(child)
     })
