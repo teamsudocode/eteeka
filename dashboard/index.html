@@ -6,7 +6,7 @@
     <!-- <script src="sdk.js"></script> -->
 
     <link rel="stylesheet" type="text/css" href="index.css">
-    
+
 </head>
 
 <body>
@@ -20,17 +20,18 @@
     <ul id="list-children" class="children-list">
     </ul>
     <div id="child-vaccine-info">
-        <h4>Completed vaccines</h4>
-        <table id="completed-vaccines"></table>
-        <hr>
-
-        <h4>Due vaccines</h4>
-        <table id="due-vaccines"></table>
-        <hr>
-
-        <h4>Future vaccines</h4>
-        <table id="future-vaccines"></table>
-        <hr>
+        <div class="card">
+            <h4 style="color:#65c101;">Completed vaccines</h4>
+            <table id="completed-vaccines"></table>
+        </div>
+        <div class="card">
+            <h4 style="color: #f79a00">Due vaccines</h4>
+            <table id="due-vaccines"></table>
+        </div>
+        <div class="card">
+            <h4>Future vaccines</h4>
+            <table id="future-vaccines"></table>
+        </div>
     </div>
 
     <script>
@@ -131,9 +132,9 @@
             document.getElementById('list-children').innerHTML = html
         }
 
-            
+
         /* sdk.js */
-        
+
         async function listChildren(parentBhamashahId) {
             try {
                 let response = await fetch(`${domainName}/listChildren?parentBhamashahId=${parentBhamashahId}`)
@@ -155,7 +156,7 @@
                 console.error(e)
             }
         }
-        
+
         async function markVaccination(vaccineId, givenBy) {
             try {
                 let response = await fetch(`${domainName}/markVaccine?vaccineId=${vaccineId}&givenBy=${givenBy}`)
@@ -166,7 +167,7 @@
                 console.error(e)
             }
         }
-        
+
         async function unmarkVaccination(vaccineId, givenBy) {
             try {
                 let response = await fetch(`${domainName}/unmarkVaccine?vaccineId=${vaccineId}&givenBy=${givenBy}`)
@@ -189,8 +190,8 @@
 
             var search = location.search.substring(1);
             if (search.length > 1) {
-                let parsedSearch = JSON.parse('{"' + search.replace(/&/g, '","').replace(/=/g,'":"') + '"}', function(key, value) {
-                    return key==="" ? value : decodeURIComponent(value)
+                let parsedSearch = JSON.parse('{"' + search.replace(/&/g, '","').replace(/=/g, '":"') + '"}', function(key, value) {
+                    return key === "" ? value : decodeURIComponent(value)
                 })
 
                 console.log(parsedSearch)

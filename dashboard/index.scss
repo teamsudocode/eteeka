@@ -126,6 +126,10 @@ q:after {
     content: none;
 }
 
+body {
+    background-color: #fdfdfd;
+}
+
 .nav {
     display: flex;
     flex-direction: row;
@@ -133,7 +137,7 @@ q:after {
     padding: 2em;
     background-color: #F79A00;
     align-items: center;
-    input[type="number"] {
+    input[type="text"] {
         border: none;
         border-radius: 2px;
         padding: 12px 20px;
@@ -164,5 +168,81 @@ q:after {
         color: #FFFFFF;
         letter-spacing: 0;
         line-height: 24px;
+    }
+}
+
+#child-vaccine-info {
+    .card {
+        padding: 1em;
+        background: #FFFFFF;
+        box-shadow: 0 2px 1px 0 rgba(215, 215, 215, 0.50);
+        border-radius: 2px;
+        margin: 2em;
+        h4 {
+            font-weight: 500;
+            font-family: Roboto;
+            font-size: 24px;
+            color: #4A4A4A;
+            letter-spacing: 0;
+            margin-bottom: 1em;
+        }
+    }
+    table {
+        tr {
+            text-align: left;
+            th {
+                padding: 0 1em;
+                text-transform: uppercase;
+                font-weight: 500;
+                font-family: Roboto;
+                font-size: 12px;
+                color: #979797;
+                line-height: 22.4px;
+            }
+            td{
+                padding: 1em;
+                font-family: Roboto;
+            }
+        }
+    }
+    button[data-mark="true"]{
+        background-color: #65C101;
+        padding: 12px 20px;
+        font-family: Roboto;
+        color: #fff;
+        border: none;
+        text-transform: uppercase;
+        font-size: 0.8em;
+        cursor: pointer;
+        &:focus{
+            outline: none;
+        }
+    }
+    
+    button[data-mark="false"]{
+        background-color: #FF0000;
+        padding: 12px 20px;
+        font-family: Roboto;
+        color: #fff;
+        border: none;
+        text-transform: uppercase;
+        font-size: 0.8em;
+        cursor: pointer;
+        &:focus{
+            outline: none;
+        }
+    }
+    #completed-vaccines{
+        border-left: 2px solid #65C101;
+        h4{
+            color: #65c101;
+        }
+    }
+    
+    #due-vaccines{
+        border-left:2px solid #F79A00;
+        h4{
+            color: #f79a00;
+        }
     }
 }

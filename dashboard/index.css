@@ -125,6 +125,10 @@ q:after {
   content: none; }
 
 /* line 129, /Users/Abhishek/Playground/rajhacks/eteeka/dashboard/index.scss */
+body {
+  background-color: #fdfdfd; }
+
+/* line 133, /Users/Abhishek/Playground/rajhacks/eteeka/dashboard/index.scss */
 .nav {
   display: flex;
   flex-direction: row;
@@ -132,15 +136,15 @@ q:after {
   padding: 2em;
   background-color: #F79A00;
   align-items: center; }
-  /* line 136, /Users/Abhishek/Playground/rajhacks/eteeka/dashboard/index.scss */
-  .nav input[type="number"] {
+  /* line 140, /Users/Abhishek/Playground/rajhacks/eteeka/dashboard/index.scss */
+  .nav input[type="text"] {
     border: none;
     border-radius: 2px;
     padding: 12px 20px;
     background: #FFFFFF;
     box-shadow: 0 2px 4px 0 rgba(180, 180, 180, 0.5);
     font-family: Roboto; }
-  /* line 144, /Users/Abhishek/Playground/rajhacks/eteeka/dashboard/index.scss */
+  /* line 148, /Users/Abhishek/Playground/rajhacks/eteeka/dashboard/index.scss */
   .nav button {
     font-weight: 500;
     font-family: Roboto;
@@ -154,15 +158,90 @@ q:after {
     cursor: pointer;
     margin-left: 1em;
     border-radius: 2px; }
-    /* line 157, /Users/Abhishek/Playground/rajhacks/eteeka/dashboard/index.scss */
+    /* line 161, /Users/Abhishek/Playground/rajhacks/eteeka/dashboard/index.scss */
     .nav button:focus {
       outline: none; }
-  /* line 161, /Users/Abhishek/Playground/rajhacks/eteeka/dashboard/index.scss */
+  /* line 165, /Users/Abhishek/Playground/rajhacks/eteeka/dashboard/index.scss */
   .nav h1 {
     font-family: Roboto;
     font-size: 32px;
     color: #FFFFFF;
     letter-spacing: 0;
     line-height: 24px; }
+
+/* line 175, /Users/Abhishek/Playground/rajhacks/eteeka/dashboard/index.scss */
+#child-vaccine-info .card {
+  padding: 1em;
+  background: #FFFFFF;
+  box-shadow: 0 2px 1px 0 rgba(215, 215, 215, 0.5);
+  border-radius: 2px;
+  margin: 2em; }
+  /* line 181, /Users/Abhishek/Playground/rajhacks/eteeka/dashboard/index.scss */
+  #child-vaccine-info .card h4 {
+    font-weight: 500;
+    font-family: Roboto;
+    font-size: 24px;
+    color: #4A4A4A;
+    letter-spacing: 0;
+    margin-bottom: 1em; }
+
+/* line 191, /Users/Abhishek/Playground/rajhacks/eteeka/dashboard/index.scss */
+#child-vaccine-info table tr {
+  text-align: left; }
+  /* line 193, /Users/Abhishek/Playground/rajhacks/eteeka/dashboard/index.scss */
+  #child-vaccine-info table tr th {
+    padding: 0 1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: Roboto;
+    font-size: 12px;
+    color: #979797;
+    line-height: 22.4px; }
+  /* line 202, /Users/Abhishek/Playground/rajhacks/eteeka/dashboard/index.scss */
+  #child-vaccine-info table tr td {
+    padding: 1em;
+    font-family: Roboto; }
+
+/* line 208, /Users/Abhishek/Playground/rajhacks/eteeka/dashboard/index.scss */
+#child-vaccine-info button[data-mark="true"] {
+  background-color: #65C101;
+  padding: 12px 20px;
+  font-family: Roboto;
+  color: #fff;
+  border: none;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  cursor: pointer; }
+  /* line 217, /Users/Abhishek/Playground/rajhacks/eteeka/dashboard/index.scss */
+  #child-vaccine-info button[data-mark="true"]:focus {
+    outline: none; }
+
+/* line 222, /Users/Abhishek/Playground/rajhacks/eteeka/dashboard/index.scss */
+#child-vaccine-info button[data-mark="false"] {
+  background-color: #FF0000;
+  padding: 12px 20px;
+  font-family: Roboto;
+  color: #fff;
+  border: none;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  cursor: pointer; }
+  /* line 231, /Users/Abhishek/Playground/rajhacks/eteeka/dashboard/index.scss */
+  #child-vaccine-info button[data-mark="false"]:focus {
+    outline: none; }
+
+/* line 235, /Users/Abhishek/Playground/rajhacks/eteeka/dashboard/index.scss */
+#child-vaccine-info #completed-vaccines {
+  border-left: 2px solid #65C101; }
+  /* line 237, /Users/Abhishek/Playground/rajhacks/eteeka/dashboard/index.scss */
+  #child-vaccine-info #completed-vaccines h4 {
+    color: #65c101; }
+
+/* line 242, /Users/Abhishek/Playground/rajhacks/eteeka/dashboard/index.scss */
+#child-vaccine-info #due-vaccines {
+  border-left: 2px solid #F79A00; }
+  /* line 244, /Users/Abhishek/Playground/rajhacks/eteeka/dashboard/index.scss */
+  #child-vaccine-info #due-vaccines h4 {
+    color: #f79a00; }
 
 /*# sourceMappingURL=index.css.map */
