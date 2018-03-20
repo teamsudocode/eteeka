@@ -1,0 +1,211 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+$accent-color: #F79A00;
+.app {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 3em;
+    h1 {
+        font-family: Roboto;
+        font-size: 1.2em;
+        color: #4A4A4A;
+        margin: 1em;
+        margin-top: 3em;
+    }
+    h2 {
+        font-family: KohinoorDevanagari;
+        font-size: 1.2em;
+        color: #4A4A4A;
+        margin-bottom: 1em;
+    }
+    .radio-group {
+        font-family: Roboto-Regular;
+        font-size: 16px;
+        color: #4A4A4A;
+        letter-spacing: 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        &.vertical {
+            flex-direction: column;
+            label {
+                margin: 0 0 8px 0;
+            }
+        }
+        label {
+            margin: 0 8px 0 0;
+            cursor: pointer;
+        }
+        input {
+            &[type="radio"] {
+                display: none;
+                &:checked+span {
+                    &:before {
+                        background-color: $accent-color;
+                        box-shadow: inset white 0 0 0 2px;
+                    }
+                }
+            }
+        }
+        span {
+            display: flex;
+            margin: 1em;
+            &:before {
+                border: 2px solid $accent-color;
+                content: '';
+                display: flex;
+                height: 16px;
+                width: 16px;
+                margin: 0 5px;
+                border-radius: 50%;
+                box-sizing: border-box;
+                transition: all ease .200s;
+                box-shadow: inset white 0 0 0 10px;
+            }
+        }
+    }
+    button {
+        img{
+            
+        }
+        align-self: flex-end;
+        border: none;
+        cursor: pointer;
+        margin-right: 2em;
+        border-radius: 50%;
+        padding: 1em;
+        background: #F79A00;
+    }
+}
