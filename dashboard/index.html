@@ -5,10 +5,16 @@
         <!-- <script src="sdk.js"></script> -->
 
         <style>
-            table, td {
+            table, td, th {
                 border: 1px solid black;
                 border-collapse: collapse;
                 padding: 5px 20px;
+            }
+            th {
+                font-weight: bold;
+            }
+            body {
+                margin: 10px 100px;
             }
         </style>
     </head>
@@ -43,8 +49,15 @@
             
 
             /* List vaccination info of a particular child, in a specific category */
-            function displayVaccinationInfo(vaccines, target) {
-                let innerHTML = ''
+            function displayVaccinationInfo(vaccines, target, mark) {
+                let innerHTML = `<tr>
+                                    <th>Vaccine Name</th>
+                                    <th>Description</th>
+                                    <th>Scheduled At</th>
+                                    <th>Given at</th>
+                                    <th>Mark/Unmark</th>
+                                <tr>`
+                let buttonText = (mark == true) ? 'Mark' : 'Unmark'
                 for (let v of vaccines) {
                     console.log(v)
                     innerHTML += '<tr data-v-id="' + v._id + '">' + 
@@ -53,8 +66,8 @@
                                     '<td>' + v.scheduledAt  + '</td>' +
                                     '<td>' + v.givenAt      + '</td>' +
                                     '<td>' + 
-                                        '<button class="v-toggle-btn">' +
-                                            'Toggle' + 
+                                        '<button class="v-toggle-btn" data-mark="' + mark + '">' +
+                                            buttonText + 
                                         '</button>' + 
                                     '</td>' +
                                     '</tr>'
@@ -68,9 +81,9 @@
                     let responseJson = await getChildInfo(childId)
                     console.log(responseJson)
                     
-                    displayVaccinationInfo(responseJson.status.completed, 'completed-vaccines')
-                    displayVaccinationInfo(responseJson.status.due, 'due-vaccines')
-                    displayVaccinationInfo(responseJson.status.future, 'future-vaccines')
+                    displayVaccinationInfo(responseJson.status.completed, 'completed-vaccines', false)
+                    displayVaccinationInfo(responseJson.status.due, 'due-vaccines', true)
+                    displayVaccinationInfo(responseJson.status.future, 'future-vaccines', true)
                     
                     attachToggleEvents()
                 } catch (e) {
@@ -85,7 +98,14 @@
                     each.onclick = async function(event) {
                         // parent = td -> parent = tr
                         let v_id = event.target.parentElement.parentElement.getAttribute('data-v-id')
-                        let responseJson = await markVaccination(v_id, username)
+                        let mark = event.target.getAttribute('data-mark') == 'true'
+                        let responseJson
+                        
+                        if (mark)
+                            responseJson = await markVaccination(v_id, username)
+                        else
+                            responseJson = await unmarkVaccination(v_id, username)
+                        
                         if (responseJson.ok) {
                             let tr = document.querySelector(`[data-v-id="${v_id}]`)
                             let tds = tr.getElementsByTagName('td')
@@ -168,7 +188,7 @@
                     console.error(e)
                 }
             }
-            
+
         </script>
         
     </body>
