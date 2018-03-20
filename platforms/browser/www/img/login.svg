@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="206px" height="120px" viewBox="0 0 206 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>add_user_ipe3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="49.9993196%" y1="100%" x2="49.9993196%" y2="0%" id="linearGradient-1">
+            <stop stop-color="#808080" stop-opacity="0.25" offset="0%"></stop>
+            <stop stop-color="#808080" stop-opacity="0.12" offset="54%"></stop>
+            <stop stop-color="#808080" stop-opacity="0.1" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="36714%" y1="36923%" x2="36714%" y2="34310%" id="linearGradient-2">
+            <stop stop-color="#808080" stop-opacity="0.25" offset="0%"></stop>
+            <stop stop-color="#808080" stop-opacity="0.12" offset="54%"></stop>
+            <stop stop-color="#808080" stop-opacity="0.1" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="72574%" y1="40002%" x2="72574%" y2="15002%" id="linearGradient-3">
+            <stop stop-color="#808080" stop-opacity="0.25" offset="0%"></stop>
+            <stop stop-color="#808080" stop-opacity="0.12" offset="54%"></stop>
+            <stop stop-color="#808080" stop-opacity="0.1" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="83287%" y1="46275%" x2="94687%" y2="46275%" id="linearGradient-4">
+            <stop stop-color="#808080" stop-opacity="0.25" offset="0%"></stop>
+            <stop stop-color="#808080" stop-opacity="0.12" offset="54%"></stop>
+            <stop stop-color="#808080" stop-opacity="0.1" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="83374%" y1="25702%" x2="83374%" y2="17702%" id="linearGradient-5">
+            <stop stop-color="#808080" stop-opacity="0.25" offset="0%"></stop>
+            <stop stop-color="#808080" stop-opacity="0.12" offset="54%"></stop>
+            <stop stop-color="#808080" stop-opacity="0.1" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Mobile-Copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-88.000000, -80.000000)">
+        <g id="add_user_ipe3" transform="translate(88.000000, 80.000000)" fill-rule="nonzero">
+            <g id="Group" opacity="0.5" fill="url(#linearGradient-1)">
+                <polygon id="Shape" points="0 0 0 6.04941176 0 119.896471 173.193204 119.896471 173.193204 6.04941176 173.193204 0"></polygon>
+            </g>
+            <rect id="Rectangle-path" fill="#FFFFFF" x="2.56910755" y="7.46117647" width="168.788009" height="110.303529"></rect>
+            <rect id="Rectangle-path" fill="#F5F5F5" x="2.56910755" y="2.21411765" width="168.788009" height="8.11529412"></rect>
+            <ellipse id="Oval" fill="#FF5252" cx="8.99187643" cy="6.14823529" rx="1.97043478" ry="1.96705882"></ellipse>
+            <ellipse id="Oval" fill="#FFFF00" cx="14.4129291" cy="6.14823529" rx="1.97043478" ry="1.96705882"></ellipse>
+            <ellipse id="Oval" fill="#69F0AE" cx="19.8316247" cy="6.14823529" rx="1.97043478" ry="1.96705882"></ellipse>
+            <rect id="Rectangle-path" fill="#F79A00" opacity="0.5" x="71.1359954" y="36.9529412" width="31.0414188" height="3.32"></rect>
+            <rect id="Rectangle-path" fill="#E0E0E0" x="48.7187643" y="51.2164706" width="33.9970709" height="3.32"></rect>
+            <rect id="Rectangle-path" fill="#65C101" transform="translate(107.598467, 52.878824) rotate(-180.000000) translate(-107.598467, -52.878824) " x="90.5999314" y="51.2188235" width="33.9970709" height="3.32"></rect>
+            <rect id="Rectangle-path" fill="#E0E0E0" x="48.5938444" y="58.3482353" width="75.878238" height="3.32"></rect>
+            <rect id="Rectangle-path" fill="#E0E0E0" x="48.5938444" y="65.4823529" width="75.878238" height="3.32"></rect>
+            <rect id="Rectangle-path" fill="url(#linearGradient-2)" x="70.7683066" y="80.7294118" width="31.5340275" height="6.14823529"></rect>
+            <rect id="Rectangle-path" fill="#F79A00" x="71.0134325" y="81.2894118" width="31.0414188" height="5.03058824"></rect>
+            <g id="Group" opacity="0.5" transform="translate(141.418764, 35.294118)" fill="url(#linearGradient-3)">
+                <ellipse id="Oval" cx="29.636659" cy="29.4164706" rx="29.4622426" ry="29.4117647"></ellipse>
+            </g>
+            <ellipse id="Oval" fill="#F5F5F5" cx="171.055423" cy="64.7105882" rx="27.576659" ry="27.5294118"></ellipse>
+            <g id="Group" opacity="0.5" transform="translate(157.681922, 43.058824)" fill="url(#linearGradient-4)">
+                <path d="M17.2177346,15.0470588 L16.6874142,14.8588235 L16.6591304,14.9058824 L16.6284897,14.9058824 L16.6284897,13.4705882 C16.6287381,13.2972578 16.6153406,13.1241759 16.5884211,12.9529412 C17.4442569,12.3240017 18.0991952,11.4609644 18.4740046,10.4682353 C20.529472,7.80730029 20.2035472,4.01872063 17.7236989,1.74661507 C15.2438507,-0.525490497 11.4347992,-0.525490497 8.95495097,1.74661507 C6.47510273,4.01872063 6.14917787,7.80730029 8.20464531,10.4682353 C8.57945469,11.4609644 9.23439297,12.3240017 10.0902288,12.9529412 C10.0633092,13.1241759 10.0499118,13.2972578 10.0501602,13.4705882 L10.0501602,15.0423529 C4.21779787,16.6464748 0.178806616,21.9442273 0.183844394,27.9835294 L0.183839686,39.7482353 L27.053418,39.7482353 L27.0534096,27.9835294 C27.0601316,21.9546157 23.0362541,16.6621703 17.2177346,15.0470588 Z" id="Shape"></path>
+            </g>
+            <path d="M171.291121,57.8141176 C174.721724,57.8141176 178.011818,59.1745843 180.43762,61.5962306 C182.863423,64.0178768 184.226224,67.3023339 184.226224,70.7270588 L184.226224,82.0588235 L158.356018,82.0588235 L158.356018,70.7270588 C158.356018,63.5954383 164.147261,57.8141176 171.291121,57.8141176 Z" id="Shape" fill="#F79A00"></path>
+            <rect id="Rectangle-path" fill="#FDA57D" x="167.859359" y="53.6" width="6.33556064" height="7.90588235" rx="3.16235294"></rect>
+            <polygon id="Shape" fill="#000000" opacity="0.05" points="165.662654 59.2141176 167.786293 63.76 169.898146 61.6517647 167.786293 58.4235294"></polygon>
+            <path d="M165.735721,58.9929412 L167.857002,63.5388235 L169.978284,61.4211765 L167.857002,58.1929412 L166.885927,58.4894118 C166.791196,58.5182427 166.698316,58.5528168 166.607803,58.5929412 L165.735721,58.9929412 Z" id="Shape" fill="#FFFFFF"></path>
+            <polygon id="Shape" fill="#000000" opacity="0.05" points="176.401053 58.9929412 174.267986 63.76 172.156133 61.6517647 174.326911 58.2517647"></polygon>
+            <path d="M176.327986,58.7717647 L174.206705,63.5411765 L172.085423,61.4235294 L174.256201,58.0235294 L174.654531,58.1364706 C175.083934,58.2595714 175.505104,58.4096753 175.915515,58.5858824 L176.327986,58.7717647 Z" id="Shape" fill="#FFFFFF"></path>
+            <polygon id="Shape" fill="#FDA57D" points="169.813295 61.2635294 170.994142 62.9835294 172.240984 61.2635294"></polygon>
+            <path d="M163.218467,67.4941176 C163.218467,67.4941176 161.95984,79.9882353 162.772998,80.8023529" id="Shape" fill="#000000" opacity="0.1"></path>
+            <path d="M178.769817,67.4941176 C178.769817,67.4941176 180.028444,79.9882353 179.215286,80.8023529" id="Shape" fill="#000000" opacity="0.1"></path>
+            <path d="M171.02714,57.4352941 C172.150212,57.438407 173.244728,57.0821649 174.150137,56.4188235 C173.904623,54.8844735 172.578894,53.7554958 171.022426,53.7552941 C169.467742,53.7578054 168.144659,54.886231 167.899428,56.4188235 C168.806135,57.0831223 169.902457,57.4394145 171.02714,57.4352941 Z" id="Shape" fill="#000000" opacity="0.05"></path>
+            <ellipse id="Oval" fill="#000000" cx="171.02714" cy="50.0658824" rx="6.24128146" ry="6.23058824"></ellipse>
+            <ellipse id="Oval" fill="#FDA57D" cx="171.02714" cy="52.0188235" rx="5.27963387" ry="5.27058824"></ellipse>
+            <path d="M166.772792,46.7929412 L168.106842,48.4188235 C168.106842,48.4188235 173.956865,48.9364706 174.62389,47.6047059 C175.290915,46.2729412 170.772586,45.3129412 170.772586,45.3129412 L166.772792,46.7929412 Z" id="Shape" fill="#000000" opacity="0.05"></path>
+            <path d="M166.772792,46.6447059 L168.106842,48.2705882 C168.106842,48.2705882 173.956865,48.7882353 174.62389,47.4564706 C175.290915,46.1247059 170.772586,45.1647059 170.772586,45.1647059 L166.772792,46.6447059 Z" id="Shape" fill="#000000"></path>
+            <ellipse id="Oval" fill="#FDA57D" cx="165.735721" cy="51.6729412" rx="1" ry="1"></ellipse>
+            <ellipse id="Oval" fill="#FDA57D" cx="176.325629" cy="51.6729412" rx="1" ry="1"></ellipse>
+            <g id="Group" opacity="0.5" transform="translate(186.908467, 41.647059)" fill="url(#linearGradient-5)">
+                <polygon id="Shape" points="19.0302517 7.31529412 11.7071167 7.31529412 11.7071167 0.00705882353 7.49755149 0.00705882353 7.49755149 7.31529412 0.174416476 7.31529412 0.174416476 11.52 7.49755149 11.52 7.49755149 18.8282353 11.7071167 18.8282353 11.7071167 11.52 19.0302517 11.52"></polygon>
+            </g>
+            <rect id="Rectangle-path" fill="#65C101" x="194.721854" y="43.0635294" width="3.57789474" height="16"></rect>
+            <rect id="Rectangle-path" fill="#65C101" transform="translate(196.510801, 51.065882) rotate(90.000000) translate(-196.510801, -51.065882) " x="194.721854" y="43.0658824" width="3.57789474" height="16"></rect>
+        </g>
+    </g>
+</svg>

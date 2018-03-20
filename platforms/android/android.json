@@ -54,6 +54,11 @@
             }
           ]
         }
+      },
+      "undefined": {
+        "parents": {
+          "undefined": []
+        }
       }
     }
   },

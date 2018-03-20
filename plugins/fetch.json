@@ -2,15 +2,7 @@
   "cordova-plugin-whitelist": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-whitelist@1"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
-  "cordova-plugin-local-notification": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-local-notification"
+      "id": "cordova-plugin-whitelist@^1.3.3"
     },
     "is_top_level": true,
     "variables": {}
@@ -29,6 +21,14 @@
       "id": "cordova-plugin-badge@>=0.8.5"
     },
     "is_top_level": false,
+    "variables": {}
+  },
+  "cordova-plugin-local-notification": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-local-notification"
+    },
+    "is_top_level": true,
     "variables": {}
   }
 }
