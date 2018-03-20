@@ -1,4 +1,4 @@
-/* line 1, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+/* line 1, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
 html,
 body,
 div,
@@ -88,7 +88,7 @@ video {
   vertical-align: baseline; }
 
 /* HTML5 display-role reset for older browsers */
-/* line 93, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+/* line 93, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
 article,
 aside,
 details,
@@ -102,21 +102,21 @@ nav,
 section {
   display: block; }
 
-/* line 107, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+/* line 107, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
 body {
   line-height: 1; }
 
-/* line 111, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+/* line 111, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
 ol,
 ul {
   list-style: none; }
 
-/* line 116, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+/* line 116, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
 blockquote,
 q {
   quotes: none; }
 
-/* line 121, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+/* line 121, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
 blockquote:before,
 blockquote:after,
 q:before,
@@ -124,35 +124,35 @@ q:after {
   content: '';
   content: none; }
 
-/* line 129, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+/* line 129, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
 * {
   -webkit-tap-highlight-color: transparent; }
 
-/* line 133, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+/* line 133, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* line 139, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+/* line 139, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
 .app {
   display: flex;
   flex-direction: column;
   text-align: center;
   padding-top: 3em; }
-  /* line 144, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  /* line 144, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
   .app h1 {
     font-family: Roboto;
     font-size: 1.2em;
     color: #4A4A4A;
     margin: 1em;
     margin-top: 3em; }
-  /* line 151, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  /* line 151, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
   .app h2 {
     font-family: KohinoorDevanagari;
     font-size: 1.2em;
     color: #4A4A4A;
     margin-bottom: 1em; }
-  /* line 157, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  /* line 157, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
   .app .radio-group {
     font-family: Roboto-Regular;
     font-size: 16px;
@@ -161,28 +161,28 @@ table {
     display: flex;
     align-items: center;
     flex-direction: column; }
-    /* line 165, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+    /* line 165, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
     .app .radio-group.vertical {
       flex-direction: column; }
-      /* line 167, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+      /* line 167, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
       .app .radio-group.vertical label {
         margin: 0 0 8px 0; }
-    /* line 171, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+    /* line 171, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
     .app .radio-group label {
       margin: 0 8px 0 0;
       cursor: pointer; }
-    /* line 176, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+    /* line 176, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
     .app .radio-group input[type="radio"] {
       display: none; }
-      /* line 179, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+      /* line 179, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
       .app .radio-group input[type="radio"]:checked + span:before {
         background-color: #F79A00;
         box-shadow: inset white 0 0 0 2px; }
-    /* line 186, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+    /* line 186, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
     .app .radio-group span {
       display: flex;
       margin: 1em; }
-      /* line 189, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+      /* line 189, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
       .app .radio-group span:before {
         border: 2px solid #F79A00;
         content: '';
@@ -194,7 +194,7 @@ table {
         box-sizing: border-box;
         transition: all ease .200s;
         box-shadow: inset white 0 0 0 10px; }
-  /* line 203, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  /* line 203, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
   .app a {
     align-self: flex-end;
     border: none;
@@ -204,7 +204,7 @@ table {
     padding: 1em;
     background: #F79A00; }
 
-/* line 214, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+/* line 214, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
 .login {
   display: flex;
   flex-direction: column;
@@ -215,17 +215,17 @@ table {
   /* active state */
   /* BOTTOM BARS ================================= */
   /* active state */ }
-  /* line 219, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  /* line 219, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
   .login img {
     padding-top: 3em; }
-  /* line 222, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  /* line 222, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
   .login h1 {
     margin: 3.5em 0;
     font-family: Roboto;
     font-size: 1.1em;
     color: #4A4A4A;
     letter-spacing: 0; }
-  /* line 229, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  /* line 229, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
   .login .container {
     font-family: 'Roboto';
     width: 100%;
@@ -237,14 +237,14 @@ table {
     align-items: center;
     -webkit-justify-content: center;
     justify-content: center; }
-  /* line 241, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  /* line 241, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
   .login * {
     box-sizing: border-box; }
-  /* line 245, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  /* line 245, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
   .login .group {
     position: relative;
     margin-bottom: 2em; }
-  /* line 249, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  /* line 249, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
   .login input {
     color: #979797;
     font-size: 0.8em;
@@ -253,11 +253,11 @@ table {
     width: 18.75em;
     border: none;
     border-bottom: 1px solid #979797; }
-  /* line 258, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  /* line 258, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
   .login input:focus {
     outline: none;
     border: none; }
-  /* line 263, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  /* line 263, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
   .login label {
     font-family: 'Roboto';
     color: #979797;
@@ -270,17 +270,17 @@ table {
     transition: 0.2s ease all;
     -moz-transition: 0.2s ease all;
     -webkit-transition: 0.2s ease all; }
-  /* line 277, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  /* line 277, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
   .login input:focus ~ label,
   .login input:valid ~ label {
     top: -20px;
     font-size: 0.8em;
     color: #F79A00; }
-  /* line 284, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  /* line 284, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
   .login .bar {
     position: relative;
     display: block; }
-  /* line 288, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  /* line 288, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
   .login .bar:before,
   .login .bar:after {
     content: '';
@@ -292,24 +292,24 @@ table {
     transition: 0.2s ease all;
     -moz-transition: 0.2s ease all;
     -webkit-transition: 0.2s ease all; }
-  /* line 300, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  /* line 300, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
   .login .bar:before {
     left: 50%; }
-  /* line 303, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  /* line 303, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
   .login .bar:after {
     right: 50%; }
-  /* line 307, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  /* line 307, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
   .login input:focus ~ .bar:before,
   .login input:focus ~ .bar:after {
     width: 50%; }
-  /* line 311, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  /* line 311, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
   .login .bhamashah {
     font-family: Roboto;
     font-size: 0.7em;
     text-transform: uppercase;
     letter-spacing: 0.3px;
     color: #F79A00; }
-  /* line 318, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  /* line 318, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
   .login .next {
     margin-right: 2em;
     margin-top: 2em;
@@ -327,31 +327,31 @@ table {
     background: #F79A00;
     border-radius: 2px; }
 
-/* line 337, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+/* line 337, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
 .notification {
   padding: 2.5em;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center; }
-  /* line 338, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  /* line 338, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
   .notification img {
     margin-top: 1em; }
-  /* line 346, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  /* line 346, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
   .notification h1 {
     margin: 3em 0 1em 0;
     font-family: Roboto;
     font-size: 20px;
     color: #4A4A4A;
     letter-spacing: 0; }
-  /* line 353, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  /* line 353, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
   .notification h2 {
     margin-bottom: 2em;
     font-family: Roboto;
     font-size: 16px;
     color: #979797;
     line-height: 22.4px; }
-  /* line 360, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  /* line 360, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
   .notification .tohome {
     padding: 12px 20px;
     background-color: #F79A00;
@@ -363,40 +363,40 @@ table {
     letter-spacing: 0.5px;
     line-height: 12px;
     text-decoration: none; }
-  /* line 372, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  /* line 372, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
   .notification .dontbother {
     font-family: Roboto;
     font-size: 13.71px;
     color: #979797;
     text-decoration: none; }
 
-/* line 381, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+/* line 381, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
 .home .nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 1.2em 0.5em;
   background-color: #65C101; }
-  /* line 387, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  /* line 387, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
   .home .nav img {
     margin-left: 1em; }
-  /* line 390, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  /* line 390, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
   .home .nav h1 {
     font-family: Roboto;
     font-size: 1.5em;
     color: #FFFFFF; }
 
-/* line 396, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+/* line 396, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
 .home .welcome {
   margin: 12px 1em 12px 1em !important; }
-  /* line 398, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  /* line 398, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
   .home .welcome h2 {
     font-family: Roboto;
     font-weight: 500;
     font-size: 18px;
     color: #4A4A4A;
     letter-spacing: 0; }
-  /* line 405, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  /* line 405, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
   .home .welcome h3 {
     margin-top: 8px;
     font-family: Roboto;
@@ -404,11 +404,11 @@ table {
     line-height: 22px;
     color: #4A4A4A;
     letter-spacing: 0; }
-    /* line 412, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+    /* line 412, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
     .home .welcome h3 span {
       color: #F79A00; }
 
-/* line 417, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+/* line 417, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
 .home .card {
   padding: 20px;
   margin: 0 1em;
@@ -416,21 +416,21 @@ table {
   box-shadow: 0 2px 1px 0 rgba(215, 215, 215, 0.5);
   border-radius: 2px; }
 
-/* line 424, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+/* line 424, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
 .home .child {
   margin-bottom: 24px; }
-  /* line 426, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  /* line 426, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
   .home .child .child-info {
     display: flex;
     flex-direction: row;
     justify-content: space-between; }
-    /* line 430, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+    /* line 430, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
     .home .child .child-info .child-name {
       font-family: Roboto;
       font-size: 16px;
       color: #4A4A4A;
       letter-spacing: 0; }
-    /* line 437, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+    /* line 437, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
     .home .child .child-info .child-gender span {
       margin-left: 4px;
       font-family: Roboto;
@@ -438,33 +438,33 @@ table {
       font-size: 14px;
       color: #A7A7A7;
       letter-spacing: 0; }
-  /* line 447, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  /* line 447, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
   .home .child hr {
     height: 0;
     margin: 12px 0;
     border: 1px solid #F3F3F3; }
-  /* line 452, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  /* line 452, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
   .home .child .med-info {
     margin-bottom: 1.2em; }
-    /* line 454, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+    /* line 454, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
     .home .child .med-info .med-name {
       display: flex;
       flex-direction: row;
       justify-content: space-between; }
-      /* line 458, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+      /* line 458, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
       .home .child .med-info .med-name .med {
         font-family: Roboto;
         font-weight: 500;
         font-size: 14px;
         color: #F79A00;
         letter-spacing: 0; }
-      /* line 465, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+      /* line 465, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
       .home .child .med-info .med-name .date {
         font-family: Roboto;
         font-size: 14px;
         color: #65C101;
         letter-spacing: 0; }
-    /* line 472, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+    /* line 472, /Users/Abhishek/Playground/rajhacks/eteeka/platforms/android/assets/www/css/index.scss */
     .home .child .med-info .med-about {
       margin-top: 8px;
       font-family: Roboto;
