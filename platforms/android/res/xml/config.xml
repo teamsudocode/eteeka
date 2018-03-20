@@ -34,5 +34,6 @@
     <icon density="hdpi" src="res/icon/android/icon-72-hdpi.png" />
     <icon density="xhdpi" src="res/icon/android/icon-96-xhdpi.png" />
     <allow-intent href="market:*" />
+    <allow-intent href="https://eteeka.herokuapp.com" />
     <preference name="loglevel" value="DEBUG" />
 </widget>
