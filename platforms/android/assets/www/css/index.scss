@@ -126,6 +126,10 @@ q:after {
     content: none;
 }
 
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -196,10 +200,7 @@ $accent-color: #F79A00;
             }
         }
     }
-    button {
-        img{
-            
-        }
+    a {
         align-self: flex-end;
         border: none;
         cursor: pointer;
@@ -207,5 +208,171 @@ $accent-color: #F79A00;
         border-radius: 50%;
         padding: 1em;
         background: #F79A00;
+    }
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    img {
+        padding-top: 3em;
+    }
+    h1 {
+        margin: 3.5em 0;
+        font-family: Roboto;
+        font-size: 1.1em;
+        color: #4A4A4A;
+        letter-spacing: 0;
+    }
+    .container {
+        font-family: 'Roboto';
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-align-items: center;
+        align-items: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+    }
+    * {
+        box-sizing: border-box;
+    }
+    /* form starting stylings ------------------------------- */
+    .group {
+        position: relative;
+        margin-bottom: 2em;
+    }
+    input {
+        color: #979797;
+        font-size: 0.8em;
+        padding: 0.625em 0.625em 0.625em 0.3125em;
+        display: block;
+        width: 18.75em;
+        border: none;
+        border-bottom: 1px solid #979797;
+    }
+    input:focus {
+        outline: none;
+        border: none;
+    }
+    /* LABEL ======================================= */
+    label {
+        font-family: 'Roboto';
+        color: #979797;
+        font-size: 0.8em;
+        font-weight: normal;
+        position: absolute;
+        pointer-events: none;
+        left: 0.4em;
+        top: 0.625em;
+        transition: 0.2s ease all;
+        -moz-transition: 0.2s ease all;
+        -webkit-transition: 0.2s ease all;
+    }
+    /* active state */
+    input:focus~label,
+    input:valid~label {
+        top: -20px;
+        font-size: 0.8em;
+        color: #F79A00;
+    }
+    /* BOTTOM BARS ================================= */
+    .bar {
+        position: relative;
+        display: block;
+    }
+    .bar:before,
+    .bar:after {
+        content: '';
+        height: 2px;
+        width: 0;
+        bottom: 1px;
+        position: absolute;
+        background: #F79A00;
+        transition: 0.2s ease all;
+        -moz-transition: 0.2s ease all;
+        -webkit-transition: 0.2s ease all;
+    }
+    .bar:before {
+        left: 50%;
+    }
+    .bar:after {
+        right: 50%;
+    }
+    /* active state */
+    input:focus~.bar:before,
+    input:focus~.bar:after {
+        width: 50%;
+    }
+    .bhamashah {
+        font-family: Roboto;
+        font-size: 0.7em;
+        text-transform: uppercase;
+        letter-spacing: 0.3px;
+        color: #F79A00;
+    }
+    .next {
+        margin-right: 2em;
+        margin-top: 2em;
+        text-decoration: none;
+        align-self: flex-end;
+        font-family: Roboto;
+        font-weight: 500;
+        border: none;
+        cursor: pointer;
+        font-size: 12px;
+        color: #FFFFFF;
+        letter-spacing: 0.2px;
+        line-height: 12px;
+        padding: 12px 20px;
+        background: #F79A00;
+        border-radius: 2px;
+    }
+}
+
+.notification {
+    img{
+        margin-top: 1em;
+    }
+    padding: 2.5em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h1 {
+        margin: 3em 0 1em 0;
+        font-family: Roboto;
+        font-size: 20px;
+        color: #4A4A4A;
+        letter-spacing: 0;
+    }
+    h2 {
+        margin-bottom: 2em;
+        font-family: Roboto;
+        font-size: 16px;
+        color: #979797;
+        line-height: 22.4px;
+    }
+    .tohome {
+        padding: 12px 20px;
+        background-color: $accent-color;
+        margin-bottom: 2em;
+        font-family: Roboto;
+        font-weight: 500;
+        font-size: 12px;
+        color: #FFFFFF;
+        letter-spacing: 0.5px;
+        line-height: 12px;
+        text-decoration: none;
+    }
+    .dontbother {
+        font-family: Roboto;
+        font-size: 13.71px;
+        color: #979797;
+        text-decoration: none;
     }
 }

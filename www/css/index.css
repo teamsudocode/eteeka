@@ -125,30 +125,34 @@ q:after {
   content: none; }
 
 /* line 129, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+* {
+  -webkit-tap-highlight-color: transparent; }
+
+/* line 133, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* line 135, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+/* line 139, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
 .app {
   display: flex;
   flex-direction: column;
   text-align: center;
   padding-top: 3em; }
-  /* line 140, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  /* line 144, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
   .app h1 {
     font-family: Roboto;
     font-size: 1.2em;
     color: #4A4A4A;
     margin: 1em;
     margin-top: 3em; }
-  /* line 147, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  /* line 151, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
   .app h2 {
     font-family: KohinoorDevanagari;
     font-size: 1.2em;
     color: #4A4A4A;
     margin-bottom: 1em; }
-  /* line 153, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  /* line 157, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
   .app .radio-group {
     font-family: Roboto-Regular;
     font-size: 16px;
@@ -157,28 +161,28 @@ table {
     display: flex;
     align-items: center;
     flex-direction: column; }
-    /* line 161, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+    /* line 165, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
     .app .radio-group.vertical {
       flex-direction: column; }
-      /* line 163, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+      /* line 167, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
       .app .radio-group.vertical label {
         margin: 0 0 8px 0; }
-    /* line 167, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+    /* line 171, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
     .app .radio-group label {
       margin: 0 8px 0 0;
       cursor: pointer; }
-    /* line 172, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+    /* line 176, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
     .app .radio-group input[type="radio"] {
       display: none; }
-      /* line 175, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+      /* line 179, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
       .app .radio-group input[type="radio"]:checked + span:before {
         background-color: #F79A00;
         box-shadow: inset white 0 0 0 2px; }
-    /* line 182, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+    /* line 186, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
     .app .radio-group span {
       display: flex;
       margin: 1em; }
-      /* line 185, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+      /* line 189, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
       .app .radio-group span:before {
         border: 2px solid #F79A00;
         content: '';
@@ -190,8 +194,8 @@ table {
         box-sizing: border-box;
         transition: all ease .200s;
         box-shadow: inset white 0 0 0 10px; }
-  /* line 199, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
-  .app button {
+  /* line 203, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  .app a {
     align-self: flex-end;
     border: none;
     cursor: pointer;
@@ -199,5 +203,171 @@ table {
     border-radius: 50%;
     padding: 1em;
     background: #F79A00; }
+
+/* line 214, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  /* form starting stylings ------------------------------- */
+  /* LABEL ======================================= */
+  /* active state */
+  /* BOTTOM BARS ================================= */
+  /* active state */ }
+  /* line 219, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  .login img {
+    padding-top: 3em; }
+  /* line 222, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  .login h1 {
+    margin: 3.5em 0;
+    font-family: Roboto;
+    font-size: 1.1em;
+    color: #4A4A4A;
+    letter-spacing: 0; }
+  /* line 229, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  .login .container {
+    font-family: 'Roboto';
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center; }
+  /* line 241, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  .login * {
+    box-sizing: border-box; }
+  /* line 245, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  .login .group {
+    position: relative;
+    margin-bottom: 2em; }
+  /* line 249, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  .login input {
+    color: #979797;
+    font-size: 0.8em;
+    padding: 0.625em 0.625em 0.625em 0.3125em;
+    display: block;
+    width: 18.75em;
+    border: none;
+    border-bottom: 1px solid #979797; }
+  /* line 258, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  .login input:focus {
+    outline: none;
+    border: none; }
+  /* line 263, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  .login label {
+    font-family: 'Roboto';
+    color: #979797;
+    font-size: 0.8em;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 0.4em;
+    top: 0.625em;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all; }
+  /* line 277, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  .login input:focus ~ label,
+  .login input:valid ~ label {
+    top: -20px;
+    font-size: 0.8em;
+    color: #F79A00; }
+  /* line 284, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  .login .bar {
+    position: relative;
+    display: block; }
+  /* line 288, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  .login .bar:before,
+  .login .bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #F79A00;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all; }
+  /* line 300, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  .login .bar:before {
+    left: 50%; }
+  /* line 303, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  .login .bar:after {
+    right: 50%; }
+  /* line 307, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  .login input:focus ~ .bar:before,
+  .login input:focus ~ .bar:after {
+    width: 50%; }
+  /* line 311, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  .login .bhamashah {
+    font-family: Roboto;
+    font-size: 0.7em;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    color: #F79A00; }
+  /* line 318, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  .login .next {
+    margin-right: 2em;
+    margin-top: 2em;
+    text-decoration: none;
+    align-self: flex-end;
+    font-family: Roboto;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    color: #FFFFFF;
+    letter-spacing: 0.2px;
+    line-height: 12px;
+    padding: 12px 20px;
+    background: #F79A00;
+    border-radius: 2px; }
+
+/* line 337, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+.notification {
+  padding: 2.5em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  /* line 338, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  .notification img {
+    margin-top: 1em; }
+  /* line 346, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  .notification h1 {
+    margin: 3em 0 1em 0;
+    font-family: Roboto;
+    font-size: 20px;
+    color: #4A4A4A;
+    letter-spacing: 0; }
+  /* line 353, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  .notification h2 {
+    margin-bottom: 2em;
+    font-family: Roboto;
+    font-size: 16px;
+    color: #979797;
+    line-height: 22.4px; }
+  /* line 360, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  .notification .tohome {
+    padding: 12px 20px;
+    background-color: #F79A00;
+    margin-bottom: 2em;
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 12px;
+    color: #FFFFFF;
+    letter-spacing: 0.5px;
+    line-height: 12px;
+    text-decoration: none; }
+  /* line 372, /Users/Abhishek/Playground/rajhacks/eteeka/www/css/index.scss */
+  .notification .dontbother {
+    font-family: Roboto;
+    font-size: 13.71px;
+    color: #979797;
+    text-decoration: none; }
 
 /*# sourceMappingURL=index.css.map */
