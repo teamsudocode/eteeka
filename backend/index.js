@@ -14,6 +14,7 @@ var config = {
 
 var app = express()
 app.use(cors())
+app.use(express.static('dashboard'))
 
 // models
 
