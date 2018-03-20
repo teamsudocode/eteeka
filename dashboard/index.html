@@ -1,4 +1,4 @@
-<html >
+<html>
     <head>
         <title>E-Teeka</title>
         <meta charset="utf-8" /> 
@@ -15,38 +15,71 @@
 
     <body>
 
-        <div id="list-children">
+        <div id="list-children-container">
+            Parent Bhamashah ID: <input type="text" id="parentBhamashahInput">
+            <button id="listChildrenBtn">List children</button>
+            <ul id="list-children">
+            </ul>
         </div>
         
         <div id="child-vaccine-info">
+            <h4>Completed vaccines</h4>
             <table id="completed-vaccines"></table>
+            <hr>
+
+            <h4>Due vaccines</h4>
             <table id="due-vaccines"></table>
+            <hr>
+
+            <h4>Future vaccines</h4>
             <table id="future-vaccines"></table>
+            <hr>
         </div>
 
         <script>
-            var domainName = 'http://eteeka.herokuapp.com/'
+            // var domainName = 'http://eteeka.herokuapp.com/'
+            var domainName = ''
             var username = 'sharma'
             
-            function displayScheduledVaccines(vaccines, target) {
+
+            /* List vaccination info of a particular child, in a specific category */
+            function displayVaccinationInfo(vaccines, target) {
                 let innerHTML = ''
                 for (let v of vaccines) {
                     console.log(v)
-                    innerHTML += '<tr data-v-id="' + v._id + '">' + 
-                                    '<td>' + v.name         + '</td>' +
-                                    '<td>' + v.description  + '</td>' +
-                                    '<td>' + v.scheduledAt  + '</td>' +
-                                    '<td>' + v.givenAt      + '</td>' +
-                                    '<td>' + 
-                                        '<button class="v-toggle-btn">' +
-                                            'Toggle' + 
-                                        '</button>' + 
-                                    '</td>' +
-                                '</tr>'
+
+                    innerHTML += `<tr data-v-id="${v._id}">
+                                    <td>${v.name}</td>
+                                    <td>${v.description}</td>
+                                    <td>${v.givenAt}</td>
+                                    <td>
+                                        <button class='v-toggle-btn'> Toggle </button>
+                                    </td>
+                                  </tr>
+                                `
                 }
                 document.getElementById(target).innerHTML = innerHTML
             }
+            
+            /* List vaccination info in all categories */
+            async function displayAllVaccinationInfo(childId) {
+                try {
+                    let response = await fetch(`/getChildInfo?childId=${childId}`)
+                    let responseJson = await response.json()
 
+                    console.log(responseJson)
+                    
+                    displayVaccinationInfo(responseJson.status.completed, 'completed-vaccines')
+                    displayVaccinationInfo(responseJson.status.due, 'due-vaccines')
+                    displayVaccinationInfo(responseJson.status.future, 'future-vaccines')
+                    
+                    attachToggleEvents()
+                } catch (e) {
+                    console.log('error> displayAllVaccinationInfo :', e)
+                }
+            }
+            
+            /* Attach event handlers to all toggle events */
             function attachToggleEvents() {
                 let allButtons = document.getElementsByClassName('v-toggle-btn')
                 for (let each of allButtons) {
@@ -59,11 +92,13 @@
                 }
             }
 
+            /* Make API call to toggle vaccination status for a particular ID */
             async function toggleVaccinationStatus(v_id) {
                 console.log(v_id)
                 try {
                     let response = await fetch(
-                        domainName + '/markVaccine?' + 'vaccineId=' + v_id + '&givenBy=' + username
+                        // '/markVaccine?' + 'vaccineId=' + v_id + '&givenBy=' + username
+                        `/markVaccine?vaccineId=${v_id}&givenBy=${username}`
                     )
                     return response.status
                 } catch (e) {
@@ -71,43 +106,42 @@
                 }
             }
 
-            function listChildren(parentBhamashahId) {
-                fetch(domainName + '/listChildren?parentBhamashahId=' + parentBhamashahId)
-                .then((response) => response.json())
-                .then((children) => {
-                    console.log(children)
-                })
+            /* Make API call to get children on a bhamashah card */
+            async function listChildren(parentBhamashahId) {
+                try {
+                    // let response = await fetch('/listChildren?parentBhamashahId=' + parentBhamashahId)
+                    let response = await fetch(`/listChildren?parentBhamashahId=${parentBhamashahId}`)
+                    let responseJson = await response.json()
+                    return responseJson
+                } catch (e) {
+                    console.log('error> listChlidren :', e)
+                }
             }
 
-            let vaccines = [
-                {
-                    "givenAt": null,
-                    "givenBy": null,
-                    "_id": "5ab0de375e9b43000489a906",
-                    "name": "BCG",
-                    "description": "Tuberculosis vaccine",
-                    "scheduledAt": "2018-03-20T10:11:03.460Z"
-                },
-                {
-                    "givenAt": null,
-                    "givenBy": null,
-                    "_id": "5ab0de375e9b43000489a905",
-                    "name": "OPV",
-                    "description": "Oral Polio Vaccine",
-                    "scheduledAt": "2018-03-20T10:11:03.460Z"
-                },
-                {
-                    "givenAt": null,
-                    "givenBy": null,
-                    "_id": "5ab0de375e9b43000489a904",
-                    "name": "Heptatitis B",
-                    "description": "Hepatitis B vaccine",
-                    "scheduledAt": "2018-03-20T10:11:03.460Z"
-                }
-            ]
+            /* Event handler to list children on a bhamashah card */
+            function listChildrenHandler() {
+                console.log('attaching listchildren listener')
+                var parentBhamashahId = document.getElementById('parentBhamashahInput').value
+                document.getElementById('listChildrenBtn').onclick = async function(e) {
+                    console.log('listing for', parentBhamashahId)
+                    let children = await listChildren(parentBhamashahId)
 
-            displayScheduledVaccines(vaccines, 'due-vaccines')
-            attachToggleEvents()
+                    let html = ''
+                    for (let child of children) {
+                        // html += '<li>' + child.fullName + '<button onclick="displayAllVaccinationInfo(\"' + child._id + '\")">Get info</button>' + '</li>'
+                        html += `<li>
+                                    ${child.fullName} 
+                                    <button onclick='displayAllVaccinationInfo("${child._id}")'>
+                                        Get Info
+                                    </button>
+                                </li>`
+                    }
+                    document.getElementById('list-children').innerHTML = html
+                }
+            }
+
+            listChildrenHandler()
+            
         </script>
         
     </body>
