@@ -140,11 +140,10 @@
                 }
             }
 
-            listChildrenHandler()
-
-
+            
+            
             /* sdk.js */
-
+            
             async function listChildren(parentBhamashahId) {
                 try {
                     let response = await fetch(`/listChildren?parentBhamashahId=${parentBhamashahId}`)
@@ -166,7 +165,7 @@
                     console.error(e)
                 }
             }
-
+            
             async function markVaccination(vaccineId, givenBy) {
                 try {
                     let response = await fetch(`/markVaccine?vaccineId=${vaccineId}&givenBy=${givenBy}`)
@@ -177,7 +176,7 @@
                     console.error(e)
                 }
             }
-
+            
             async function unmarkVaccination(vaccineId, givenBy) {
                 try {
                     let response = await fetch(`/unmarkVaccine?vaccineId=${vaccineId}&givenBy=${givenBy}`)
@@ -189,7 +188,22 @@
                 }
             }
 
-        </script>
+            window.onload = () => {
+                listChildrenHandler()
+
+                var search = location.search.substring(1);
+                let parsedSearch = JSON.parse('{"' + search.replace(/&/g, '","').replace(/=/g,'":"') + '"}', function(key, value) {
+                    return key==="" ? value : decodeURIComponent(value)
+                })
+
+                console.log(parsedSearch)
+
+                if (parsedSearch.childId !== undefined) {
+                    displayAllVaccinationInfo(parsedSearch.childId)
+                }
+            }
+            
+            </script>
         
     </body>
-</html>
+    </html>
