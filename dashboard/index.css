@@ -244,4 +244,21 @@ body {
   #child-vaccine-info #due-vaccines h4 {
     color: #f79a00; }
 
+/* line 250, /Users/Abhishek/Playground/rajhacks/eteeka/dashboard/index.scss */
+.children-list {
+  padding: 1em; }
+  /* line 252, /Users/Abhishek/Playground/rajhacks/eteeka/dashboard/index.scss */
+  .children-list li {
+    font-family: Roboto;
+    font-size: 1em; }
+    /* line 255, /Users/Abhishek/Playground/rajhacks/eteeka/dashboard/index.scss */
+    .children-list li button {
+      padding: 0.5em;
+      border: none;
+      background-color: #65C101;
+      color: #fff;
+      text-transform: uppercase;
+      cursor: pointer;
+      margin-left: 1em; }
+
 /*# sourceMappingURL=index.css.map */

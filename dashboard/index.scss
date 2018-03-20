@@ -246,3 +246,20 @@ body {
         }
     }
 }
+
+.children-list{
+    padding: 1em;
+    li{
+        font-family: Roboto;
+        font-size: 1em;
+        button{
+            padding: 0.5em;
+            border: none;
+            background-color: #65C101;
+            color: #fff;
+            text-transform: uppercase;
+            cursor: pointer;
+            margin-left: 1em;
+        }
+    }
+}
