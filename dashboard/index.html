@@ -35,28 +35,35 @@
     </div>
 
     <script>
-        var domainName = 'http://eteeka.herokuapp.com'
-        //var domainName = ''
+        // var domainName = 'http://eteeka.herokuapp.com'
+        var domainName = ''
         var username = 'sharma'
+
+        function fixDate(d) {
+            return (new Date(d)).toDateString().split(' ').slice(1).join(' ')
+        }
 
 
         /* List vaccination info of a particular child, in a specific category */
         function displayVaccinationInfo(vaccines, target, mark) {
             let innerHTML = `<tr>
-                                    <th>Vaccine Name</th>
-                                    <th>Description</th>
-                                    <th>Scheduled At</th>
-                                    <th>Given at</th>
-                                    <th>Mark/Unmark</th>
-                                <tr>`
+                                <th>Vaccine Name</th>
+                                <th>Description</th>
+                                <th>Scheduled At</th>
+                            `
+            innerHTML +=  (mark == false) ? `<th>Given at</th>` : ''
+                                
+                innerHTML += `<th>Mark/Unmark</th>
+                            <tr>`
             let buttonText = (mark == true) ? 'Mark' : 'Unmark'
+            
             for (let v of vaccines) {
                 console.log(v)
                 innerHTML += '<tr data-v-id="' + v._id + '">' +
                     '<td>' + v.name + '</td>' +
                     '<td>' + v.description + '</td>' +
-                    '<td>' + v.scheduledAt + '</td>' +
-                    '<td>' + v.givenAt + '</td>' +
+                    '<td>' + fixDate(v.scheduledAt) + '</td>' +
+                    ((mark == false) ? ('<td>' + fixDate(v.givenAt) + '</td>') : '') +
                     '<td>' +
                     '<button class="v-toggle-btn" data-mark="' + mark + '">' +
                     buttonText +
