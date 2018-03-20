@@ -122,7 +122,7 @@
                     // html += '<li>' + child.fullName + '<button onclick="displayAllVaccinationInfo(\"' + child._id + '\")">Get info</button>' + '</li>'
                     html += `<li>
                                     ${child.fullName} 
-                                    <button onclick="displayAllVaccinationInfo('${child._id}')">
+                                    <button onclick="window.location.search = 'childId=${childId}'">
                                         Get Info
                                     </button>
                                 </li>`
@@ -131,51 +131,53 @@
             }
         }
 
-
-
-        /* sdk.js */
-
-        async function listChildren(parentBhamashahId) {
-            try {
-                let response = await fetch(`/listChildren?parentBhamashahId=${parentBhamashahId}`)
-                let responseJson = await response.json()
-                return responseJson
-            } catch (e) {
-                console.error('listChildren > some error occured')
-                console.error(e)
+            
+            
+            /* sdk.js */
+            
+            async function listChildren(parentBhamashahId) {
+                try {
+                    let response = await fetch(`${domainName}/listChildren?parentBhamashahId=${parentBhamashahId}`)
+                    let responseJson = await response.json()
+                    return responseJson
+                } catch (e) {
+                    console.error('listChildren > some error occured')
+                    console.error(e)
+                }
             }
         }
 
-        async function getChildInfo(childId) {
-            try {
-                let response = await fetch(`/getChildInfo?childId=${childId}`)
-                let responseJson = await response.json()
-                return responseJson
-            } catch (e) {
-                console.error('getChildInfo > some error occured')
-                console.error(e)
+            async function getChildInfo(childId) {
+                try {
+                    let response = await fetch(`${domainName}/getChildInfo?childId=${childId}`)
+                    let responseJson = await response.json()
+                    return responseJson
+                } catch (e) {
+                    console.error('getChildInfo > some error occured')
+                    console.error(e)
+                }
             }
-        }
-
-        async function markVaccination(vaccineId, givenBy) {
-            try {
-                let response = await fetch(`/markVaccine?vaccineId=${vaccineId}&givenBy=${givenBy}`)
-                let responseJson = await response.json()
-                return responseJson
-            } catch (e) {
-                console.error('markVaccination > some error occured')
-                console.error(e)
+            
+            async function markVaccination(vaccineId, givenBy) {
+                try {
+                    let response = await fetch(`${domainName}/markVaccine?vaccineId=${vaccineId}&givenBy=${givenBy}`)
+                    let responseJson = await response.json()
+                    return responseJson
+                } catch (e) {
+                    console.error('markVaccination > some error occured')
+                    console.error(e)
+                }
             }
-        }
-
-        async function unmarkVaccination(vaccineId, givenBy) {
-            try {
-                let response = await fetch(`/unmarkVaccine?vaccineId=${vaccineId}&givenBy=${givenBy}`)
-                let responseJson = await response.json()
-                return responseJson
-            } catch (e) {
-                console.error('unmarkVaccination > some error occured')
-                console.error(e)
+            
+            async function unmarkVaccination(vaccineId, givenBy) {
+                try {
+                    let response = await fetch(`${domainName}/unmarkVaccine?vaccineId=${vaccineId}&givenBy=${givenBy}`)
+                    let responseJson = await response.json()
+                    return responseJson
+                } catch (e) {
+                    console.error('unmarkVaccination > some error occured')
+                    console.error(e)
+                }
             }
         }
 
