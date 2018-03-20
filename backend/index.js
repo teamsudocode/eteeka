@@ -5,8 +5,12 @@ const Schema = mongoose.Schema;
 
 
 var config = {
-    vaccineFile: './allVaccines.json'
+    vaccineFile: readFileSync(__dirname + '/allVaccines.json').toString(),
+    databaseURL: process.env.DATABASEURL || 'mongodb://localhost/eteeka',
+    port: process.env.PORT || 3000
 }
+
+var app = express()
 
 // models
 
@@ -34,7 +38,7 @@ const Child = mongoose.model('child', ChildSchema)
 
 function getDefaultVaccinesList() {
     // https://assets.babycenter.com/ims/pdf/in/vaccinations-IN-rev415.pdf
-    let vaccines = JSON.parse(readFileSync(config.vaccineFile).toString())
+    let vaccines = JSON.parse(config.vaccineFile)
     let returnValue = []
     for (let each of vaccines) {
         let d = new Date()
@@ -58,8 +62,6 @@ function fixNameFormat(fullName) {
                    .map(word => word.trim())
                    .join(' ')
 }
-
-var app = express()
 
 
 // health
@@ -138,6 +140,7 @@ app.get('/getChildInfo', (req, res) => {
         _id: mongoose.Types.ObjectId(childId.trim())
     })
     .then((child) => child.toJSON())
+    // take care of toJSON()
     .then((child) => {
         let completed = []
         let due = []
@@ -232,7 +235,9 @@ app.get('/unmarkVaccine', (req, res) => {
 })
 
 // run the app
-mongoose.connect('mongodb://localhost/eteeka')
-app.listen(3000)
+
+console.log('current config', config.databaseURL, config.port)
+mongoose.connect(config.databaseURL)
+app.listen(config.port)
 
 // console.log(getDefaultVaccinesList())
