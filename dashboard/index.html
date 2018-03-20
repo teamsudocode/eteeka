@@ -25,18 +25,20 @@
         </div>
 
         <script>
+            var domainName = 'http://eteeka.herokuapp.com/'
+            var username = 'sharma'
             
             function displayScheduledVaccines(vaccines, target) {
                 let innerHTML = ''
                 for (let v of vaccines) {
                     console.log(v)
-                    innerHTML += '<tr>' + 
+                    innerHTML += '<tr data-v-id="' + v._id + '">' + 
                                     '<td>' + v.name         + '</td>' +
                                     '<td>' + v.description  + '</td>' +
                                     '<td>' + v.scheduledAt  + '</td>' +
                                     '<td>' + v.givenAt      + '</td>' +
                                     '<td>' + 
-                                        '<button class="v-toggle-btn" data-v-id="'+ v._id + '">' +
+                                        '<button class="v-toggle-btn">' +
                                             'Toggle' + 
                                         '</button>' + 
                                     '</td>' +
@@ -49,18 +51,28 @@
                 let allButtons = document.getElementsByClassName('v-toggle-btn')
                 for (let each of allButtons) {
                     each.onclick = function(event) {
-                        let v_id = event.target.getAttribute('data-v-id')
-                        console.log(v_id)
+                        // parent = td -> parent = tr
+                        let v_id = event.target.parentElement.parentElement.getAttribute('data-v-id')
+                        let status = toggleVaccinationStatus(v_id)
+                        console.log(status)
                     }
                 }
             }
 
-            function toggleVaccinationStatus(vid) {
-                console.log(vid)
+            async function toggleVaccinationStatus(v_id) {
+                console.log(v_id)
+                try {
+                    let response = await fetch(
+                        domainName + '/markVaccine?' + 'vaccineId=' + v_id + '&givenBy=' + username
+                    )
+                    return response.status
+                } catch (e) {
+                    console.log('some error occured')
+                }
             }
 
             function listChildren(parentBhamashahId) {
-                fetch('http://localhost:3000/listChildren?parentBhamashahId=' + parentBhamashahId)
+                fetch(domainName + '/listChildren?parentBhamashahId=' + parentBhamashahId)
                 .then((response) => response.json())
                 .then((children) => {
                     console.log(children)
