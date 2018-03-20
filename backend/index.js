@@ -38,7 +38,7 @@ const Child = mongoose.model('child', ChildSchema)
 
 function getDefaultVaccinesList() {
     // https://assets.babycenter.com/ims/pdf/in/vaccinations-IN-rev415.pdf
-    let vaccines = JSON.parse(vaccineFile)
+    let vaccines = JSON.parse(config.vaccineFile)
     let returnValue = []
     for (let each of vaccines) {
         let d = new Date()
