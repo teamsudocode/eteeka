@@ -2,6 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const readFileSync = require('fs').readFileSync
+const path = require('path')
 const Schema = mongoose.Schema;
 
 
@@ -66,6 +67,12 @@ function fixNameFormat(fullName) {
 }
 
 
+app.get('/dashboard', (req, res) => {
+    let completePath = __dirname + '/../dashboard/index.html'
+    res.sendFile(path.resolve(completePath))
+})
+
+
 // health
 app.get('/health', (req, res) => {
     res.json({
@@ -110,7 +117,7 @@ app.get('/listChildren', (req, res) => {
     let parentBhamashahId = req.query.parentBhamashahId
     if (parentBhamashahId === undefined) {
         res.json({
-            message: 'Missing childId in request'
+            message: 'Missing parentBhamashahId in request'
         })
         return
     }
